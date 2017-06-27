@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wavelo Live Map!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <style type="text/css">
+  body{
+   font-family: roboto, arial
+  }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
+
+<div id="mapid" style="width:95vw;height:95vh"></div>
+
+<script type="text/javascript" src="wavelolivemap-opt.js"></script>
+<script>
+    Map().main('mapid');
+    setTimeout(10000);
+    setInterval(function(){Map().update();}, 10000);
+</script>
+
+</body>
+</html>
