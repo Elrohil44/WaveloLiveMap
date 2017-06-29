@@ -5,7 +5,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
   <style type="text/css">
   body{
-   font-family: roboto, arial
+   font-family: roboto, arial;
+   margin: 0px
+  }
+  div{
+   max-height: 100%;
   }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
@@ -14,13 +18,19 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
 
-<div id="mapid" style="width:95vw;height:95vh"></div>
+<div id="mapid" style="width:100vw;height:100vh;max-width:100%">
+    <div id="map">
+        <div class="leaflet-bottom leaflet-right">
+            <input type="button" id="Btn2" value="Refresh" onclick="Map.update(Rented);Map.update(Available)" class="leaflet-control" />
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="wavelolivemap-opt.js"></script>
 <script>
-    Map().main('mapid');
+    Map.main('map');
     setTimeout(10000);
-    setInterval(function(){Map().update();}, 10000);
+    setInterval(function(){Map.update(Rented);}, 10000);
 </script>
 
 </body>
